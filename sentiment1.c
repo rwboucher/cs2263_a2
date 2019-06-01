@@ -27,11 +27,9 @@ int main(int argc, char ** argv)
     char* tokenized[80];
     int reviewTotal = 0, hits = 0, reviewAvg = 0;
 
-    //while((
-    fgets(oneLine, sizeof(oneLine), fileHandle);
-    printf("%s\n", oneLine);
-    //!= NULL)
-    //{
+    while((fgets(oneLine, sizeof(oneLine), fileHandle)) != NULL)
+    //printf("%s\n", oneLine);
+    {
         int i = 0;
         tokenized[i] = strtok(oneLine, " ");
         reviewVal = atoi(tokenized[i]);
@@ -54,7 +52,7 @@ int main(int argc, char ** argv)
             }
                     
         } 
-    //}
+    }
     
     printf("%s appeared %d times\n", *getWord, hits);
     fclose(fileHandle);   
