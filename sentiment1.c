@@ -19,21 +19,30 @@ void enterWord(char* retVal[])
 int main(int argc, char ** argv)
 {
     // Get the word to search for
-    char *getVal[ARRAY_SIZE] = {NULL};
+    char* getVal[ARRAY_SIZE] = {NULL};
     enterWord(getVal);
 
     // Open the file to be searched
-    FILE *fileHandle;
-    fileHandle = fopen("movieReviews.txt", "r");
+    FILE* fileHandle;
+    fileHandle = fopen(argv[1], "r");
     char oneLine[MAX_LINE_LENGTH];
 
     // Search for the entered word
     int reviewVal = 0;
     char* reviewWord[MAX_LINE_LENGTH];
-    while(fgets(oneLine, MAX_LINE_LENGTH, fileHandle) != NULL)
-    {
+    char* tokenized[80];
+    //while(
+    fgets(oneLine, sizeof(oneLine), fileHandle);
+    printf("%s", oneLine);
+    tokenized[0] = strtok(oneLine, " ");
+    tokenized[1] = strtok(NULL, " ");
+    printf("Got the token.\n");
+    printf("%s\n", tokenized[0]);
+    printf("%s\n", tokenized[1]);
+    // != NULL)
+    
         
-    }
+    
     
 
 
